@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Create Sample</title>
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+	<div class="container">
+		<div class="title">
+			<h1>Create Sample</h1>
+		</div>
+		<div class="form">
+			<form th:object="${sampleDomain}" th:action="@{/sample/save}" method="POST">
+				<label>NAME:</label>
+				<input type="text" id="attributeName" th:field="*{attributeName}" autofocus="autofocus" placeholder="Input the sample name..." required />
+				<button type="submit">SAVE</button>
+				<a th:href="@{/sample}">CANCEL</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
